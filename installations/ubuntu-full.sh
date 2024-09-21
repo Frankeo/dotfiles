@@ -22,6 +22,9 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
 sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
+wget https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb
+sudo apt-get install ./docker-desktop-amd64.deb
+rm -rf docker-desktop-amd64.deb
 
 # Clone dotfiles repo
 sudo git clone https://github.com/Frankeo/dotfiles.git ~/dotfiles
