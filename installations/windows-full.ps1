@@ -33,10 +33,10 @@ New-Item -ItemType SymbolicLink -Path "~\.zshrc" -Target "~\dotfiles\oh-my-zsh\.
 New-Item -ItemType SymbolicLink -Path "~\.p10k.zsh " -Target "~\dotfiles\oh-my-zsh\.p10k.zsh"
 
 # Install Fonts
-Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"wget -P C:/Windows/Fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"') -NoNewWindow -Wait
-Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"wget -P C:/Windows/Fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf"') -NoNewWindow -Wait
-Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"wget -P C:/Windows/Fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf"') -NoNewWindow -Wait
-Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"wget -P C:/Windows/Fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf"') -NoNewWindow -Wait
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"(cd C:/Windows/Fonts && curl -O https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)"') -NoNewWindow -Wait
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"(cd C:/Windows/Fonts && curl -O https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)"') -NoNewWindow -Wait
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"(cd C:/Windows/Fonts && curl -O https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)"') -NoNewWindow -Wait
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"(cd C:/Windows/Fonts && curl -O https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)"') -NoNewWindow -Wait
 
 # Install VS Code
 # choco install vscode -y
