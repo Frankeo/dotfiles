@@ -41,7 +41,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/Frankeo/dotfiles/refs/heads/m
 ```
 
 ### Windows
-
+Run a _PowerShell_ terminal **As Administrator**
 ```powershell
 Invoke-RestMethod -Uri "https://raw.githubusercontent.com/Frankeo/dotfiles/refs/heads/main/installations/windows-full.ps1" | Invoke-Expression
 ```
