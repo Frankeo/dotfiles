@@ -18,13 +18,8 @@ Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c
 
 # Install Oh My Zsh
 Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"cp -r ~/dotfiles/oh-my-zsh/zsh-5.9-2-x86_64/* C:/''Program Files''/Git"') -NoNewWindow -Wait
-$multiLineText = @"
-if [ -t 1 ]; then
-  exec zsh
-fi
-"@
-$multiLineText | Out-File -FilePath "~\.bashrc"
-Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"echo yes | sh -c ''$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)''"') -NoNewWindow -Wait
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"cp ~/dotfiles/oh-my-zsh/.bashrc ~/"') -NoNewWindow -Wait
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"echo yes | sh -c ''$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)''"') -NoNewWindow -Wait
 
 
 # Setup Configs
