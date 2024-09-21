@@ -13,18 +13,15 @@ choco install hyper -y
 # Install Git and Git Bash
 choco install git -y
 
-# Install Oh My Zsh
-
 # Clone dorfiles repo
-Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-i', '-l', '-c', '"echo $HOME"') -NoNewWindow -Wait
-Invoke-WebRequest "https://github.com/Frankeo/dotfiles/archive/refs/heads/main.zip" -OutFile "~\repo.zip"
-Expand-Archive -Path "~\repo.zip" -DestinationPath "~\temp"
-Move-Item -Path "~\temp\dotfiles-main" -Destination "~"
-Rename-Item -path "~\dotfiles-main" -NewName "dotfiles"
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-i', '-l', '-c', 'git clone https://github.com/Frankeo/dotfiles.git ~/dotfiles') -NoNewWindow -Wait
+
+# Install Oh My Zsh
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-i', '-l', '-c', 'cp -r ~/dotfiles/oh-my-zsh/zsh-5.9-2-x86_64 C:/Program Files/Git') -NoNewWindow -Wait
 
 # Setup Configs
 New-Item -ItemType SymbolicLink -Path "~\.gitconfig" -Target "~\dotfiles\git\.gitconfig"
-New-Item -ItemType SymbolicLink -Path "~\.hyper.js" -Target "~\dotfiles\hyper\.hyper.js"
+New-Item -ItemType SymbolicLink -Path "~\.hyper.js" -Target "~\dotfiles\hyper\.hyper-windows.js"
 
 # Install VS Code
 # choco install vscode -y
