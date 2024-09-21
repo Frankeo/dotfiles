@@ -16,12 +16,12 @@ choco install git -y
 # Install Oh My Zsh
 
 # Clone dorfiles repo
-Invoke-WebRequest "https://github.com/Frankeo/dotfiles/archive/refs/heads/main.zip" -OutFile "C:\Temp\repo.zip"
-Expand-Archive -Path "C:\Temp\repo.zip" -DestinationPath "~/dotfiles"
+Invoke-WebRequest "https://github.com/Frankeo/dotfiles/archive/refs/heads/main.zip" -OutFile "~\repo.zip"
+Expand-Archive -Path "~\repo.zip" -DestinationPath "~\dotfiles"
 
 # Setup Configs
-New-Item -ItemType SymbolicLink -Path "~/dotfiles/git/.gitconfig" -Target "~/.gitconfig"
-New-Item -ItemType SymbolicLink -Path "~/dotfiles/hyper/.hyper.js" -Target "~/.hyper.js"
+New-Item -ItemType SymbolicLink -Path "~\dotfiles\git\.gitconfig" -Target "~\.gitconfig"
+New-Item -ItemType SymbolicLink -Path "~\dotfiles\hyper\.hyper.js" -Target "~\.hyper.js"
 
 # Install VS Code
 # choco install vscode -y
