@@ -12,7 +12,7 @@ sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg]
 sudo apt update
 sudo apt install google-chrome-stable -y
 
-# Install Docker
+# Install Docker Desktop
 sudo install -m 0755 -d /etc/apt/keyrings
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
 sudo chmod a+r /etc/apt/keyrings/docker.asc
