@@ -17,7 +17,9 @@ choco install git -y
 
 # Clone dorfiles repo
 Invoke-WebRequest "https://github.com/Frankeo/dotfiles/archive/refs/heads/main.zip" -OutFile "~\repo.zip"
-Expand-Archive -Path "~\repo.zip" -DestinationPath "~\dotfiles"
+Expand-Archive -Path "~\repo.zip" -DestinationPath "~\temp"
+Move-Item -Path "~\temp\dotfiles-main" -Destination "~"
+Rename-Item -path "~\dotfiles-main" -NewName "~\dotfiles"
 
 # Setup Configs
 New-Item -ItemType SymbolicLink -Path "~\dotfiles\git\.gitconfig" -Target "~\.gitconfig"
