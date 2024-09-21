@@ -23,8 +23,8 @@ Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c
 
 # Setup Configs
 New-Item -ItemType SymbolicLink -Path "~\.gitconfig" -Target "~\dotfiles\git\.gitconfig"
-Remove-Item "$Env:AppData/Hyper/.hyper.js"
-New-Item -ItemType SymbolicLink -Path "$Env:AppData/Hyper/.hyper.js" -Target "~\dotfiles\hyper\.hyper-windows.js"
+# Remove-Item "$Env:AppData\Hyper\.hyper.js"
+New-Item -ItemType SymbolicLink -Path "$Env:AppData\Hyper\.hyper.js" -Target "~\dotfiles\hyper\.hyper-windows.js"
 # Setup Oh My Zsh config
 Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k"') -NoNewWindow -Wait
 Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"') -NoNewWindow -Wait
@@ -34,12 +34,11 @@ New-Item -ItemType SymbolicLink -Path "~\.zshrc" -Target "~\dotfiles\oh-my-zsh\.
 New-Item -ItemType SymbolicLink -Path "~\.p10k.zsh " -Target "~\dotfiles\oh-my-zsh\.p10k.zsh"
 
 # Install Fonts
-Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"(curl -O https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)"') -NoNewWindow -Wait
-Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"(curl -O https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)"') -NoNewWindow -Wait
-Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"(curl -O https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)"') -NoNewWindow -Wait
-Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"(curl -O https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)"') -NoNewWindow -Wait
-
-echo "Install fonts"
+echo "Install Fonts"
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"(curl -o ''MesloLGS NF Regular'' https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf)"') -NoNewWindow -Wait
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"(curl -o ''MesloLGS NF Bold'' https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf)"') -NoNewWindow -Wait
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"(curl -o ''MesloLGS NF Italic'' https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf)"') -NoNewWindow -Wait
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"(curl -o ''MesloLGS NF Bold Italic'' https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf)"') -NoNewWindow -Wait
 $fonts = (New-Object -ComObject Shell.Application).Namespace(0x14)
 foreach ($file in gci *.ttf)
 {
