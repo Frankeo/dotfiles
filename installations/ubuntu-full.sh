@@ -10,7 +10,7 @@ sudo apt install curl software-properties-common apt-transport-https ca-certific
 wget -qO - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo tee /etc/apt/keyrings/google-chrome.gpg
 sudo sh -c 'echo "deb [arch=amd64 signed-by=/etc/apt/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main" > /etc/apt/sources.list.d/google-chrome.list'
 sudo apt update
-sudo apt install google-chrome-stable
+sudo apt install google-chrome-stable -y
 
 # Install Docker
 sudo install -m 0755 -d /etc/apt/keyrings
@@ -21,10 +21,10 @@ echo \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 sudo apt update
-sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 # Clone dotfiles repo
-git clone https://github.com/Frankeo/dotfiles.git ~/dotfiles
+sudo git clone https://github.com/Frankeo/dotfiles.git ~/dotfiles
 
 # Setup global git config
 ln -fs ~/dotfiles/git/.gitconfig ~/.gitconfig
@@ -49,9 +49,9 @@ sudo apt install zsh -y
 echo yes | sh -c "$(wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 
 # Setup Oh My Zsh config
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+sudo git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
+sudo git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+sudo git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ln -fs ~/dotfiles/oh-my-zsh/.zshrc ~/.zshrc
 ln -fs ~/dotfiles/oh-my-zsh/.p10k.zsh ~/.p10k.zsh 
 
