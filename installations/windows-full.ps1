@@ -28,8 +28,15 @@ New-Item -ItemType SymbolicLink -Path "~\.hyper.js" -Target "~\dotfiles\hyper\.h
 Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k"') -NoNewWindow -Wait
 Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"') -NoNewWindow -Wait
 Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions"') -NoNewWindow -Wait
+Remove-Item "~\.zshrc"
 New-Item -ItemType SymbolicLink -Path "~\.zshrc" -Target "~\dotfiles\oh-my-zsh\.zshrc"
 New-Item -ItemType SymbolicLink -Path "~\.p10k.zsh " -Target "~\dotfiles\oh-my-zsh\.p10k.zsh"
+
+# Install Fonts
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"wget -P C:/Windows/Fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf"') -NoNewWindow -Wait
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"wget -P C:/Windows/Fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf"') -NoNewWindow -Wait
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"wget -P C:/Windows/Fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf"') -NoNewWindow -Wait
+Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"wget -P C:/Windows/Fonts https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf"') -NoNewWindow -Wait
 
 # Install VS Code
 # choco install vscode -y
