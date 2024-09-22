@@ -2,7 +2,7 @@ Set-ExecutionPolicy Bypass -Scope Process -Force;
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 # Install Google Chrome
-# choco install googlechrome -y
+choco install googlechrome -y
 
 # Install Docker Desktop
 # choco install docker-desktop -y
@@ -51,7 +51,7 @@ foreach ($file in gci *.ttf)
 cp *.ttf c:\windows\fonts\
 
 # Install VS Code
-# choco install vscode -y
+choco install vscode -y
 
 # Install Common Tools
-# choco install audacity vlc gimp -y
+choco install audacity vlc gimp -y

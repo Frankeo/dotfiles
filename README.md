@@ -32,7 +32,7 @@ You can fork the repository and replace the dotfiles with your configurations an
 | Windows 10 Pro  | ✅     |
 
 
-## Full Instalation
+## Full Installation
 
 ### Ubuntu
 
@@ -41,7 +41,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/Frankeo/dotfiles/refs/heads/m
 ```
 
 ### Windows
-Run a _PowerShell_ terminal **As Administrator**
+Run a _PowerShell_ terminal **As Administrator** . We are experimenting issues with Docker Desktop
 ```powershell
 Invoke-RestMethod -Uri "https://raw.githubusercontent.com/Frankeo/dotfiles/refs/heads/main/installations/windows-full.ps1" | Invoke-Expression
 ```
