@@ -1,11 +1,9 @@
+# Install Chocolatey
 Set-ExecutionPolicy Bypass -Scope Process -Force; 
 [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 
 # Install Google Chrome
 choco install googlechrome -y
-
-# Install Docker Desktop
-# choco install docker-desktop -y
 
 # Install Hyper
 choco install hyper -y
@@ -25,6 +23,7 @@ Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c
 New-Item -ItemType SymbolicLink -Path "~\.gitconfig" -Target "~\dotfiles\git\.gitconfig"
 New-Item -Path "~\AppData\Roaming" -Name "Hyper" -ItemType "directory"
 New-Item -ItemType SymbolicLink -Path "~\AppData\Roaming\Hyper\.hyper.js" -Target "~\dotfiles\hyper\.hyper-windows.js"
+
 # Setup Oh My Zsh config
 Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"git clone https://github.com/romkatv/powerlevel10k.git ~/.oh-my-zsh/custom/themes/powerlevel10k"') -NoNewWindow -Wait
 Start-Process -FilePath "$env:ProgramFiles\Git\bin\bash.exe" -ArgumentList @('-c', '"git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting"') -NoNewWindow -Wait
@@ -55,3 +54,6 @@ choco install vscode -y
 
 # Install Common Tools
 choco install audacity vlc gimp -y
+
+# Install Docker Desktop
+choco install docker-desktop -y
