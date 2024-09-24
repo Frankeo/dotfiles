@@ -1,10 +1,11 @@
 #!/bin/bash
 
 # Install requirements
-xcode-select —-install
+xcode-select --install
 
 # Install Homebrew
-/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+curl -fsSL -o install.sh https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
 
 # Install Google Chrome
 brew install --cask google-chrome

@@ -30,6 +30,7 @@ You can fork the repository and replace the dotfiles with your configurations an
 | ------------------- |:------:|
 | Ubuntu 22.04 (LTS)  | ✅     |
 | Windows 10 Pro  | ✅     |
+| MacOS Sonoma 14.5  | ✅     |
 
 
 ## Full Installation
@@ -44,4 +45,10 @@ bash <(wget -qO- https://raw.githubusercontent.com/Frankeo/dotfiles/refs/heads/m
 Run a _PowerShell_ terminal **As Administrator** . We are experimenting issues with Docker Desktop
 ```powershell
 Invoke-RestMethod -Uri "https://raw.githubusercontent.com/Frankeo/dotfiles/refs/heads/main/installations/windows-full.ps1" | Invoke-Expression
+```
+
+### MacOS
+
+```bash
+sh <(curl -fsSL https://raw.githubusercontent.com/Frankeo/dotfiles/refs/heads/main/installations/macos-full.sh)
 ```
