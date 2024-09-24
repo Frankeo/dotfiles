@@ -24,6 +24,12 @@ brew install --cask hyper
 # Setup Hyper config
 ln -fs ~/dotfiles/hyper/.hyper.js ~/.hyper.js 
 
+# Install Fonts
+curl -L -o ~/Library/Fonts/'MesloLGS NF Regular'.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
+curl -L -o ~/Library/Fonts/'MesloLGS NF Bold'.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
+curl -L -o ~/Library/Fonts/'MesloLGS NF Italic'.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
+curl -L -o ~/Library/Fonts/'MesloLGS NF Bold Italic'.ttf https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
+
 # Install Oh My Zsh
 brew install zsh
 echo yes | sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
