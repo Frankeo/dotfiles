@@ -4,7 +4,7 @@
 xcode-select --install
 
 # Install Homebrew
-curl -fsSL -o install.sh https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
 export PATH="/opt/homebrew/bin:$PATH" >> ~/.zshrc
 
 # Install Google Chrome
