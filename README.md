@@ -1,54 +1,57 @@
 # Dotfiles
-It contains my dotfiles, they are used as cross platform configuration and some scripts to restore into my current system and install programs along side.
 
-Supports:
-  - Mac OS
-  - Ubuntu
-  - Windows
+Cross-platform configuration files and installers for macOS, Ubuntu, and Windows.
 
-## Configuration
-You can fork the repository and replace the dotfiles with your configurations and get your customization
+Fork this repository to customize the configuration. To use your fork, replace `Frankeo/dotfiles` in the installer URL and set `DOTFILES_REPOSITORY` to your fork's clone URL.
 
-## Installation types
+## macOS
 
-- __Dev Install__
-  * Google Chrome
-  * Docker Desktop
-  * Git
-  * Hyper JS
-  * Zsh and Oh My Zsh
-  * Vs Code 
+The installers require an internet connection and an administrator account. Install Apple's Command Line Tools first and wait for setup to finish:
 
-- __Full Install__ (All included in __Dev Install__ plus): 
-  * Audacity
-  * Vlc
-  * Gimp
+```bash
+xcode-select --install
+```
 
-## Tested Environments
+Run the installer as your regular user, without `sudo`. It installs Homebrew if needed, clones the configured dotfiles repository to `~/dotfiles`, and backs up existing config files before linking replacements. Homebrew may ask for your administrator password.
 
-| OS                  | Tested |
-| ------------------- |:------:|
-| Ubuntu 22.04 (LTS)  | ✅     |
-| Windows 10 Pro  | ✅     |
-| MacOS Sonoma 14.5  | ✅     |
+### Dev
 
+Installs Chrome, Docker Desktop, Hyper, Visual Studio Code, Zsh, Oh My Zsh, Powerlevel10k, Zsh plugins, and the Meslo font. It also links the Git, Hyper, and Zsh configuration files.
 
-## Full Installation
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Frankeo/dotfiles/refs/heads/main/installations/macos-dev.sh)
+```
 
-### Ubuntu
+### Full
+
+Includes the Dev install, plus Audacity, VLC, and GIMP.
+
+```bash
+bash <(curl -fsSL https://raw.githubusercontent.com/Frankeo/dotfiles/refs/heads/main/installations/macos-full.sh)
+```
+
+From a local clone, run `bash installations/macos-dev.sh` or `bash installations/macos-full.sh` from the repository root.
+
+## Ubuntu
+
+The Ubuntu Full installer installs the development tools and additional desktop applications.
 
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/Frankeo/dotfiles/refs/heads/main/installations/ubuntu-full.sh)
 ```
 
-### Windows
-Run a _PowerShell_ terminal **As Administrator** . We are experimenting issues with Docker Desktop
+## Windows
+
+Run the Full installer from an elevated PowerShell terminal. Docker Desktop may need additional setup after installation.
+
 ```powershell
 Invoke-RestMethod -Uri "https://raw.githubusercontent.com/Frankeo/dotfiles/refs/heads/main/installations/windows-full.ps1" | Invoke-Expression
 ```
 
-### MacOS
+## Tested environments
 
-```bash
-sh <(curl -fsSL https://raw.githubusercontent.com/Frankeo/dotfiles/refs/heads/main/installations/macos-full.sh)
-```
+| Operating system | Version | Tested |
+| --- | --- | :---: |
+| Ubuntu | 22.04 LTS | Yes |
+| Windows 10 Pro | 10 | Yes |
+| macOS | Sonoma 14.5 | Yes |

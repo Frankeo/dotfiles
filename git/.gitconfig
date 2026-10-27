@@ -1,3 +1,5 @@
 [user]
 	email = ingfrancisco.moreno1@gmail.com
 	name = Frankeo
+[safe]
+	directory = /Users/francisco-moreno/dotfiles
