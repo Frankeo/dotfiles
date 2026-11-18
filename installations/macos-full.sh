@@ -5,15 +5,10 @@ readonly DOTFILES_REPOSITORY="${DOTFILES_REPOSITORY:-https://github.com/Frankeo/
 readonly DOTFILES_DIR="${DOTFILES_DIR:-$HOME/dotfiles}"
 readonly HOMEBREW_INSTALL_URL="https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh"
 
-<<<<<<< Updated upstream
-# Install Homebrew
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-=======
 fail() {
 	printf 'Error: %s\n' "$1" >&2
 	exit 1
 }
->>>>>>> Stashed changes
 
 [[ "$(uname -s)" == "Darwin" ]] || fail "This installer is for macOS."
 [[ "$(id -u)" -ne 0 ]] || fail "Run this installer as your normal user, not with sudo."
@@ -79,7 +74,7 @@ clone_if_missing() {
 	fi
 }
 
-"$brew_path" install zsh
+"$brew_path" install zsh kind
 "$brew_path" install --cask google-chrome docker hyper visual-studio-code
 
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then

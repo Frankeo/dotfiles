@@ -74,7 +74,7 @@ clone_if_missing() {
   fi
 }
 
-"$brew_path" install zsh
+"$brew_path" install zsh kind
 "$brew_path" install --cask google-chrome docker hyper visual-studio-code
 
 if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
